@@ -69,7 +69,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* disable debug print */
 //#define NO_DEBUG
-
+#define FORCE_NKRO
+#define CAPS_WORD_IDLE_TIMEOUT 1500  // 1.5 seconds
 /* disable print */
 //#define NO_PRINT
 
