@@ -29,6 +29,7 @@ enum custom_keycodes {  //custom keycodes def
 #define CTLCAPS TD(TD_LCTL_CAPS)
 #define HOMEEND TD(TD_HOME_END)
 #define GAMING TG(_gaming)
+
 enum layers { //def layers
     _qwerty,
     _gaming,
@@ -76,7 +77,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case QMKFLASH: // send cli flash command and put keyboard into bootloader
+    case QMKFLASH: // macro: send cli flash kbd and put keyboard into bootloader
         if (record->event.pressed) {
             clear_keyboard();
             SEND_STRING("qmk flash -kb cannonkeys/instant65 -km ideas32 -j 0");
@@ -84,7 +85,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             reset_keyboard();
         };
         break;
-    case QMKMAKE: // send cli make command
+    case QMKMAKE: // macro: send cli compile kbd firmware
         if (record->event.pressed) {
             clear_keyboard();
             SEND_STRING("qmk compile -kb cannonkeys/instant65 -km ideas32 -j 0");
@@ -112,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB /*tab*/, KC_Q /*q*/, KC_W /*w*/, KC_E /*e*/, KC_R /*r*/, KC_T /*t*/, KC_Y /*y*/, KC_U /*u*/, KC_I /*i*/, KC_O /*o*/, KC_P /*p*/, KC_LBRC /*[{*/, KC_RBRC /*]}*/, KC_BSLS/*\|*/, KC_END /*end, row 2 end*/,
     KC_CAPS /*caps*/ , KC_A /*a*/, KC_S /*s*/, KC_D /*d*/, KC_F /*f*/, KC_G /*g*/, KC_H /*h*/, KC_J /*j*/, KC_K /*k*/, KC_L /*l*/, KC_SCLN /*;*/, KC_QUOT /*"'*/, KC_ENT /*ent*/ , KC_PGUP /*pgup, row 3 end*/,
     KC_LSFT /*lsft*/, KC_Z /*z*/, KC_X /*x*/, KC_C /*c*/, KC_V /*v*/, KC_B /*b*/, KC_N /*n*/, KC_M /*m*/, KC_COMM /*,<*/, KC_DOT /*.>*/, KC_SLSH /*/?*/, KC_RSFT /*rsft*/, KC_UP /*up*/, KC_PGDN /*pgdn, row 4 end*/,
-    KC_LCTL /*lctl*/, KC_LGUI /*lalt*/, LOWER /*lcmd*/, KC_SPC /*spc*/, KC_RGUI /*rcmd*/, GAMING /*rctl*/, KC_LEFT /*left*/, KC_DOWN /*down*/, KC_RGHT /*right*/),
+    KC_LCTL /*lctl*/, KC_LGUI /*lalt*/, KC_LALT /*lcmd*/, KC_SPC /*spc*/, LOWER /*rcmd*/, GAMING /*rctl*/, KC_LEFT /*left*/, KC_DOWN /*down*/, KC_RGHT /*right*/),
 
     [ _plover] = LAYOUT_default(QK_GESC /*esc*/, STN_N1 /*1!*/, STN_N2 /*2@*/, STN_N3 /*3#*/, STN_N4 /*4$*/, STN_N5 /*5%*/, STN_N6 /*6^*/, STN_N7 /*7&*/, STN_N8 /*8*/, STN_N9 /*9(*/, XXXXXXX /*0)*/, XXXXXXX /*-_*/, XXXXXXX /*=+*/, KC_BSPC /*bspc*/, KC_DEL /*del, row 1 end*/,
     KC_TAB /*tab*/, STN_S1 /*q*/, STN_TL /*w*/, STN_PL /*e*/, STN_HL /*r*/, STN_ST1 /*t*/, STN_ST3 /*y*/, STN_FR /*u*/, STN_PR /*i*/, STN_LR /*o*/, STN_TR /*p*/, STN_DR /*[{*/, XXXXXXX /*]}*/, XXXXXXX /*\|*/, HOMEEND /*end, row 2 end*/,
