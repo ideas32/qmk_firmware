@@ -1,0 +1,83 @@
+{
+    "keyboard_name": "3x4 Macropad Revision 0.1",
+    "board": "GENERIC_RP_RP2040",
+    "bootloader": "rp2040",
+    "diode_direction": "ROW2COL",
+    "processor": "RP2040",
+    "usb": {
+        "device_version": "1.0.0",
+        "pid": "0x0000"
+    },
+    "features": {
+        "bootmagic": true,
+        "command": true,
+        "console": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "encoder": true,
+        "oled": true,
+        "rgb_matrix": true,
+        "i2c": true,
+        "wpm": true
+    },
+    "matrix_pins": {
+        "cols": ["GP20", "GP21", "GP22", "GP26"],
+        "rows": ["GP19", "GP18", "GP17", "GP16"]
+    },
+    "rgb_matrix": {
+        "pin": "GP11",
+        "led_count": 16,
+        "driver": "WS2812",
+        "layout": [
+            // underglow
+            {"flags": 2, "x": 0, "y": 53}, // LED16
+            {"flags": 2, "x": 168, "y": 53}, // LED15
+            {"flags": 2, "x": 168, "y": 32}, // LED14
+            {"flags": 2, "x": 56, "y": 32}, // LED13
+
+            // per key rgb
+            {"flags": 4, "matrix": [0, 1], "x": 0, "y": 0}, // LED12 SW1
+            {"flags": 4, "matrix": [0, 2], "x": 112, "y": 0}, // LED11 SW5
+            {"flags": 4, "matrix": [0, 3], "x": 224, "y": 0}, // LED10 SW9
+            {"flags": 4, "matrix": [1, 3], "x": 224, "y": 21}, // LED9 SW2
+            {"flags": 4, "matrix": [1, 2], "x": 112, "y": 21}, // LED8 SW6
+            {"flags": 4, "matrix": [1, 1], "x": 0, "y": 21}, // LED7 SW10
+            {"flags": 4, "matrix": [2, 1], "x": 0, "y": 43}, // LED6 SW3
+            {"flags": 4, "matrix": [2, 2], "x": 112, "y": 43}, // LED5 SW7
+            {"flags": 4, "matrix": [2, 3], "x": 224, "y": 43}, // LED4 SW11
+            {"flags": 4, "matrix": [3, 3], "x": 224, "y": 64}, // LED3 SW4
+            {"flags": 4, "matrix": [3, 2], "x": 112, "y": 64}, // LED2 SW8
+            {"flags": 4, "matrix": [3, 1], "x": 0, "y": 64} // LED1 SW12
+        ]
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                { "matrix": [0, 1], "x": 0, "y": 0 },
+                { "matrix": [0, 2], "x": 1, "y": 0 },
+                { "matrix": [0, 3], "x": 1, "y": 0 },
+                { "matrix": [1, 1], "x": 0, "y": 1 },
+                { "matrix": [1, 2], "x": 1, "y": 1 },
+                { "matrix": [1, 3], "x": 2, "y": 1 },
+                { "matrix": [2, 1], "x": 0, "y": 2 },
+                { "matrix": [2, 2], "x": 1, "y": 2 },
+                { "matrix": [2, 3], "x": 2, "y": 2 },
+                { "matrix": [3, 0], "x": 0, "y": 3 },
+                { "matrix": [3, 1], "x": 1, "y": 3 },
+                { "matrix": [3, 2], "x": 2, "y": 3 },
+                { "matrix": [3, 3], "x": 3, "y": 3 }
+            ]
+        }
+    },
+    "encoder": {
+        "enabled": true,
+        "rotary": [
+            {
+                "pin_a": "GP14",
+                "pin_b": "GP15"
+            }
+        ]
+    }
+
+}

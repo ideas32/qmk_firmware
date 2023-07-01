@@ -1,0 +1,12 @@
+{
+    "manufacturer": "Kean Li",
+    "maintainer": "ideas32",
+    "url": "",
+    "usb": {
+        "vid": "0xFEED"
+    },
+    "build": {
+        "lto": true
+    }
+
+}
