@@ -1,1 +1,1 @@
-DEFAULT_FOLDER = ideas_32/3x4_macropad/rev0
+DEFAULT_FOLDER = ideas32/3x4_macropad/rev0
