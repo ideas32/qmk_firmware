@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "3x4 Macropad Revision 0.1",
+    "keyboard_name": "3x4 Macropad Revision 1.0",
     "board": "GENERIC_RP_RP2040",
     "bootloader": "rp2040",
     "diode_direction": "ROW2COL",
@@ -28,7 +28,7 @@
     "rgb_matrix": {
         "pin": "GP11",
         "led_count": 16,
-        "driver": "WS2812",
+        "driver": "ws2812",
         "layout": [
             // underglow
             {"flags": 2, "x": 0, "y": 53}, // LED16

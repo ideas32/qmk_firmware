@@ -14,11 +14,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 #pragma once
+#include_next <mcuconf.h>
 
-#if defined(KEYBOARD_splitkb_kyria_rev3)
-#    define HAL_USE_I2C TRUE
-#    define HAL_USE_PWM TRUE
-#    define HAL_USE_SERIAL TRUE
-#endif
 
-#include_next <halconf.h>
+#undef RP_I2C_USE_I2C0
+#define RP_I2C_USE_I2C0 TRUE
